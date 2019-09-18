@@ -32,6 +32,7 @@ const Form = props => {
         onChange={handleChanges}
         value={member.role}
       />
+      <button type="submit">Add Form</button>
     </form>
   );
 };
