@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const Form = props => {
-  const [member, setMember] = useState({name: "", email: "", role:""});
+  const [member, setMember] = useState({name: " ", email: " ", role:" "});
 
 
  const  handleChanges = e => {
@@ -9,8 +9,12 @@ const Form = props => {
     setMember({ ...member, [e.target.name]: e.target.value });
  }
 
+ const submitForm = e  => {
+    e.preventDefault();
+ }
+
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <input
         id="name"
         type="text"
@@ -32,7 +36,7 @@ const Form = props => {
         onChange={handleChanges}
         value={member.role}
       />
-      <button type="submit">Add Form</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
