@@ -6,7 +6,7 @@ const Form = props => {
 
  const  handleChanges = e => {
     console.log(member);
-
+    setMember({ ...member, [e.target.name]: e.target.value });
  }
 
   return (
