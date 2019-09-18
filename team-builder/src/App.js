@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TeamMembers from "./component/TeamMembers";
+import Form from "./component/Form";
 import './App.css';
 function App() {
 const [member, setMember] = useState([
@@ -11,7 +12,8 @@ const [member, setMember] = useState([
 
   return(
     <div>
-     <TeamMembers  members={member}/>
+     <TeamMembers members={member}/>
+     <Form/>
     </div>
   )
 }

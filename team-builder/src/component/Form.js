@@ -2,6 +2,13 @@ import React, { useState } from "react";
 
 const Form = props => {
   const [member, setMember] = useState({name: "", email: "", role:""});
+
+
+ const  handleChanges = e => {
+    console.log(member);
+
+ }
+
   return (
     <form>
       <input
