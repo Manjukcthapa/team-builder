@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TeamMembers from "./component/TeamMembers";
 import Form from "./component/Form";
-import styled from "styled-components"
+
 import './App.css';
 
 
@@ -13,6 +13,8 @@ const [members, setMembers] = useState([
     {id: 3, name: "greenland jones", email: "itsme@mikejones", role: "student"},
 ]);
 
+
+
 const addNewMember = member => {
   const newMember = {
     id:Date.now(),
@@ -23,10 +25,13 @@ const addNewMember = member => {
   };
   setMembers([...members, newMember]);
 }
+const deleteMember = id => {
+  setMembers(members.filter(member => member.id !== id))
+}
 
   return(
     <div>
-     <TeamMembers members={members}/>
+     <TeamMembers members={members} deleteMember={deleteMember}/>
      <Form addNewMember={addNewMember}/>
     </div>
   )

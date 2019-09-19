@@ -16,7 +16,7 @@ const Item = styled.div`
   margin-left: 80px;
   text-align: center;
   margin-top: 30px;
-  background-color:#5DADE2;
+  background-color:#D6DBDF;
   border-radius: 10%;
 `;
 const H1 = styled.h1`
@@ -34,6 +34,7 @@ border-radius: 5%;
 `;
 
 const TeamMembers = props => {
+ 
 
   return (
     <FirstDiv>
@@ -44,9 +45,15 @@ const TeamMembers = props => {
           <p>{member.name}</p>
           <p>{member.email}</p>
           <p>{member.role}</p>
+          <button onClick={() => props.deleteMember(member.id)}>
+  Delete
+</button>
+          <button>Edit</button>
         </Item>
       ))}
     </Div>
+
+   
     </FirstDiv>
   );
 };
