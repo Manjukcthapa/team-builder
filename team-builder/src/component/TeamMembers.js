@@ -6,7 +6,6 @@ const Div = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   height: 500px;
-  
 `;
 
 const Item = styled.div`
@@ -16,44 +15,40 @@ const Item = styled.div`
   margin-left: 80px;
   text-align: center;
   margin-top: 30px;
-  background-color:#D6DBDF;
+  background-color: #d6dbdf;
   border-radius: 10%;
 `;
 const H1 = styled.h1`
-text-align: center;
-color:white;
+  text-align: center;
+  color: white;
 `;
 const FirstDiv = styled.div`
-height:600px;
-width:1000px;
-border: 3px solid #34495e;
-margin-bottom:200px;
-margin-left:130px;
-background-color:#2E86C1;
-border-radius: 5%;
+  height: 600px;
+  width: 1000px;
+  border: 3px solid #34495e;
+  margin-bottom: 200px;
+  margin-left: 130px;
+  background-color: #2e86c1;
+  border-radius: 5%;
 `;
 
 const TeamMembers = props => {
- 
-
   return (
     <FirstDiv>
-    <H1>Our Team</H1>
-    <Div className="note-list">
-      {props.members.map(member => (
-        <Item className="note" key={member.id}>
-          <p>{member.name}</p>
-          <p>{member.email}</p>
-          <p>{member.role}</p>
-          <button onClick={() => props.deleteMember(member.id)}>
-  Delete
-</button>
-          <button>Edit</button>
-        </Item>
-      ))}
-    </Div>
-
-   
+      <H1>Our Team</H1>
+      <Div className="note-list">
+        {props.members.map(member => (
+          <Item className="note" key={member.id}>
+            <p>{member.name}</p>
+            <p>{member.email}</p>
+            <p>{member.role}</p>
+            <button onClick={() => props.deleteMember(member.id)}>
+              Delete
+            </button>
+            <button >Edit</button>
+          </Item>
+        ))}
+      </Div>
     </FirstDiv>
   );
 };
